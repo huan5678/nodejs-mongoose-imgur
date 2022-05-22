@@ -1,0 +1,123 @@
+{
+	"info": {
+		"_postman_id": "d345ee51-de5d-4f91-be45-bbde4a76e29d",
+		"name": "NodeJS-week7-imgur",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "使用者註冊",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"test1234\",\n    \"email\": \"test1234@gmail.com\",\n    \"password\": \"1q2w3E4$\",\n    \"confirmPassword\": \"1q2w3E4$\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/user/sign_up",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"user",
+						"sign_up"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "使用者新增圖片",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer ",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "",
+							"type": "file",
+							"src": "/Volumes/DATA/TDDOWNLOAD/581fb0877326a0b70cfdef36dbfd92c8.jpeg"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{URL}}/upload",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"upload"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "使用者登入",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"test1234@gmail.com\",\n    \"password\": \"1q2w3E4$\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/user/sign_in",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"user",
+						"sign_in"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "URL",
+			"value": "https://node-mongoose-imgur.herokuapp.com/",
+			"type": "string"
+		}
+	]
+}
